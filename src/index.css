@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Nathanol Specialty Dental Center - Design System */
+
+@layer base {
+  :root {
+    /* Primary - Calming Teal (Healthcare Trust) */
+    --primary: 168 84% 32%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Soft Blue-Gray */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 215 25% 27%;
+    
+    /* Accent - Warm Coral (Action) */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Background & Foreground */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 17%;
+    
+    /* Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 17%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 17%;
+    
+    /* Muted */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 168 84% 32%;
+    
+    /* Radius */
+    --radius: 0.75rem;
+    
+    /* Custom Colors */
+    --teal-50: 166 76% 97%;
+    --teal-100: 167 85% 89%;
+    --teal-500: 168 84% 32%;
+    --teal-600: 169 84% 27%;
+    --teal-700: 170 84% 22%;
+    
+    --coral: 25 95% 53%;
+    --coral-dark: 21 90% 48%;
+    
+    --gold: 45 93% 47%;
+    
+    /* Sidebar - for any admin features */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 168 84% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 215 25% 17%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 168 84% 32%;
+  }
+
+  .dark {
+    --primary: 168 72% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 215 25% 17%;
+    --secondary-foreground: 210 20% 96%;
+    
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    
+    --background: 222 47% 8%;
+    --foreground: 210 20% 96%;
+    
+    --card: 222 47% 11%;
+    --card-foreground: 210 20% 96%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 20% 96%;
+    
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 168 72% 45%;
+    
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 168 72% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 168 72% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-br from-primary to-teal-700;
+  }
+
+  .gradient-hero {
+    @apply bg-gradient-to-br from-teal-50 via-background to-secondary;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-teal-700 bg-clip-text text-transparent;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+
+  .animate-pulse-gentle {
+    animation: pulseGentle 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes slideInRight {
+    from { 
+      opacity: 0; 
+      transform: translateX(-20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateX(0); 
+    }
+  }
+
+  @keyframes pulseGentle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+}
