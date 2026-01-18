@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SEOHead } from "@/components/SEOHead";
 import { BUSINESS_INFO, SEO_METADATA, SERVICES_DATA, WHY_CHOOSE_US } from "@/lib/constants";
+import { assetUrl } from "@/lib/asset";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Heart,
@@ -30,9 +31,9 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 // ✅ Put these files in: /public/images/
 const HERO_IMAGES = [
-  `${import.meta.env.BASE_URL}images/clinic-hero-1.png`,
-  `${import.meta.env.BASE_URL}images/clinic-hero-2.png`,
-  `${import.meta.env.BASE_URL}images/clinic-hero-3.png`,
+  assetUrl("images/clinic-hero-1.png"),
+  assetUrl("images/clinic-hero-2.png"),
+  assetUrl("images/clinic-hero-3.png"),
 ];
 
 // ✅ WhatsApp (Ethiopia): 093 030 3333 -> 251930303333
