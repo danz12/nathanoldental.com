@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SEOHead } from "@/components/SEOHead";
 import { BUSINESS_INFO, SEO_METADATA, SERVICES_DATA, WHY_CHOOSE_US } from "@/lib/constants";
+import { assetUrl } from "@/lib/asset";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Heart,
@@ -28,10 +29,11 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Zap
 };
 
+// ✅ Put these files in: /public/images/
 const HERO_IMAGES = [
-  "/images/clinic-hero-1.png",
-  "/images/clinic-hero-2.png",
-  "/images/clinic-hero-3.png"
+  "images/clinic-hero-1.png",
+  "images/clinic-hero-2.png",
+  "images/clinic-hero-3.png",
 ];
 
 // ✅ WhatsApp (Ethiopia): 093 030 3333 -> 251930303333
@@ -116,7 +118,7 @@ export default function HomePage() {
               {HERO_IMAGES.map((img, i) => (
                   <img
                       key={img}
-                      src={img}
+                      src={assetUrl(img)}
                       alt={BUSINESS_INFO.name}
                       className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000
                   ${i === activeImage ? "opacity-100" : "opacity-0"}`}

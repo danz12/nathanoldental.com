@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import { BUSINESS_INFO } from "@/lib/constants";
+import { assetUrl } from "@/lib/asset";
 
 // TikTok icon component
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -42,7 +43,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3">
               <img
-                  src="/images/logo-square.png"
+                  src={assetUrl("images/logo-square.png")}
                   alt="Nathanol Specialty Dental Center logo"
                   className="h-10 w-10 rounded-lg object-contain bg-white"
                   loading="eager"
