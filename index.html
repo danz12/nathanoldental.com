@@ -37,6 +37,16 @@
           content="Specialty dental care in Addis Ababa. Call 093 030 3333."
   />
   <meta name="twitter:image" content="og-image.png" />
+  <script>
+    (function () {
+      var redirect = sessionStorage.getItem("gh-pages-redirect");
+      if (redirect) {
+        sessionStorage.removeItem("gh-pages-redirect");
+        var url = new URL(redirect);
+        history.replaceState(null, "", url.pathname + url.search + url.hash);
+      }
+    })();
+  </script>
 </head>
 
 <body>
